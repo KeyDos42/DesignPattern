@@ -2,9 +2,9 @@ package composite;
 
 public class Main {
     public static void main(String[] args) {
-        Operateur operateur = new Operateur();
-        operateur.add(new Multiplication(4,5));
-        operateur.add(new Addition(6,8));
-        System.out.println(operateur.compute());
+        Operator operator = new Multiplication(5,8);
+        operator.add(new Addition(5,8));
+        operator.add(new Multiplication(5, 5));
+        System.out.println(operator.computeOperator());
     }
 }
