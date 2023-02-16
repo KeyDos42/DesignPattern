@@ -1,5 +1,6 @@
 package composite;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,14 +10,19 @@ public abstract class Operator extends Terme {
 
     @Override
     double computeOperator() {
+        Iterator<Terme> termeIterator = operatorList.iterator();
         double res = 0;
-        for (Terme terme : operatorList) {
-            if (terme instanceof Addition) {
-                res += ((Addition) terme).compute();
-            } else if (terme instanceof Multiplication) {
-                res += ((Multiplication) terme).compute();
+
+        while (termeIterator.hasNext()) {
+            if (termeIterator instanceof Addition) {
+                res += ((Addition) termeIterator).compute();
+            } else if (termeIterator instanceof Multiplication) {
+                res += ((Multiplication) termeIterator).compute();
             }
+
+            termeIterator.next();
         }
+
         return res;
     }
 
