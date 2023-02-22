@@ -3,8 +3,6 @@ package composite.operator;
 import composite.Expression;
 import composite.Operator;
 
-import java.util.Iterator;
-
 public class Multiplication extends Operator {
     public Multiplication() {
         super('*');

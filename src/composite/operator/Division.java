@@ -1,11 +1,6 @@
 package composite.operator;
 import composite.Expression;
-import composite.Number;
 import composite.Operator;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class Division extends Operator {
     public Division() {

@@ -1,7 +1,6 @@
 package composite.operator;
 
 import composite.Expression;
-import composite.Number;
 import composite.Operator;
 
 import java.util.Iterator;
