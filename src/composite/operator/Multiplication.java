@@ -1,9 +1,9 @@
 package composite.operator;
 
 import composite.Expression;
-import composite.Operator;
+import composite.Operateur;
 
-public class Multiplication extends Operator {
+public class Multiplication extends Operateur {
     public Multiplication() {
         super('*');
     }

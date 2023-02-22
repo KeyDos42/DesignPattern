@@ -1,9 +1,9 @@
 package composite;
 
-public class Number extends Expression {
+public class Nombre extends Expression {
     private int valeur;
 
-    public Number(int valeur) {
+    public Nombre(int valeur) {
         this.valeur = valeur;
     }
 

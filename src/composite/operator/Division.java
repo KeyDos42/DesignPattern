@@ -1,8 +1,8 @@
 package composite.operator;
 import composite.Expression;
-import composite.Operator;
+import composite.Operateur;
 
-public class Division extends Operator {
+public class Division extends Operateur {
     public Division() {
         super('/');
     }

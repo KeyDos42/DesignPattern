@@ -1,11 +1,11 @@
 package composite.operator;
 
 import composite.Expression;
-import composite.Operator;
+import composite.Operateur;
 
 import java.util.Iterator;
 
-public class Addition extends Operator {
+public class Addition extends Operateur {
     public Addition() {
         super('+');
     }

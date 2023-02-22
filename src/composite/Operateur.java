@@ -3,13 +3,13 @@ package composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Operator extends Expression implements IOperator {
+public abstract class Operateur extends Expression implements IOperateur {
 
     // façade : attribut liste en privé
     protected List<Expression> arguments = new ArrayList<>();
     private final char symbole;
 
-    public Operator(char symbole) {
+    public Operateur(char symbole) {
         super();
         this.symbole=symbole;
     }

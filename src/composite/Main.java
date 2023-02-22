@@ -2,7 +2,7 @@ package composite;
 
 public class Main {
     public static void main(String[] args) {
-        Algebraic.getInstance();
+        Algebrique.getInstance();
 
     }
 }

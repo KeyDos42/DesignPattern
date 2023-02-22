@@ -1,9 +1,9 @@
 package composite.operator;
 
 import composite.Expression;
-import composite.Operator;
+import composite.Operateur;
 
-public class Soustraction extends Operator {
+public class Soustraction extends Operateur {
     public Soustraction() {
         super('-');
     }
