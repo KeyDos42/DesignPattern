@@ -1,5 +1,5 @@
 package composite;
 
-public abstract class Terme {
+public abstract class Term {
     abstract double computeOperator();
 }

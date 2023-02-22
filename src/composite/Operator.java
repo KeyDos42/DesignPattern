@@ -3,32 +3,32 @@ package composite;
 import composite.operator.Addition;
 import composite.operator.Division;
 import composite.operator.Multiplication;
-import composite.operator.Soustraction;
+import composite.operator.Subtraction;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Operator extends Terme {
-    List<Terme> operatorList = new ArrayList<>();
+public abstract class Operator extends Term {
+    List<Term> operatorList = new ArrayList<>();
 
     @Override
     double computeOperator() {
         double res = 0;
-        for (Terme terme : operatorList) {
-            if (terme instanceof Addition) {
-                res += ((Addition) terme).compute();
-            } else if (terme instanceof Multiplication) {
-                res += ((Multiplication) terme).compute();
-            } else if (terme instanceof Division) {
-                res += ((Division) terme).compute();
-            } else if (terme instanceof Soustraction) {
-                res += ((Soustraction) terme).compute();
+        for (Term term : operatorList) {
+            if (term instanceof Addition) {
+                res += ((Addition) term).compute();
+            } else if (term instanceof Multiplication) {
+                res += ((Multiplication) term).compute();
+            } else if (term instanceof Division) {
+                res += ((Division) term).compute();
+            } else if (term instanceof Subtraction) {
+                res += ((Subtraction) term).compute();
             }
         }
         return res;
     }
 
-    protected void add(Terme arithmetic) {
+    protected void add(Term arithmetic) {
         operatorList.add(arithmetic);
     }
 }
