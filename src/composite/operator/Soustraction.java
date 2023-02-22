@@ -9,9 +9,10 @@ public class Soustraction extends Operator {
     }
 
     public int interpret() {
-        int res = this.arguments.get(0).interpret();
-        arguments.remove(arguments.get(0));
-        if (this.arguments.size() == 1){
+        int res;
+        if (this.arguments.size() == 2){
+            res = this.arguments.get(0).interpret();
+            arguments.remove(arguments.get(0));
             for (Expression argument : arguments) {
                 res -= argument.interpret();
             }
