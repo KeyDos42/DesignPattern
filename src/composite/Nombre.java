@@ -1,5 +1,7 @@
 package composite;
 
+import composite.visitor.ElementVisiteur;
+
 public class Nombre extends Expression {
     private int valeur;
 
@@ -9,6 +11,11 @@ public class Nombre extends Expression {
 
     public int interpret() {
         return valeur;
+    }
+
+    @Override
+    public void accept(ElementVisiteur elementVisiteur) {
+
     }
 
     @Override

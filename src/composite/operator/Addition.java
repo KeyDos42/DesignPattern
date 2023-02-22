@@ -2,6 +2,7 @@ package composite.operator;
 
 import composite.Expression;
 import composite.Operateur;
+import composite.visitor.ElementVisiteur;
 
 import java.util.Iterator;
 
@@ -23,5 +24,10 @@ public class Addition extends Operateur {
         }
 
         return res;
+    }
+
+    @Override
+    public void accept(ElementVisiteur elementVisiteur) {
+
     }
 }

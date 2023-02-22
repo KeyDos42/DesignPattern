@@ -1,5 +1,7 @@
 package composite;
 
+import composite.visitor.ElementVisiteur;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,12 +45,12 @@ public abstract class Operateur extends Expression implements IOperateur {
     public Expression get(int i) {
         return this.arguments.get(i);
     }
-/*
+
     @Override
-    public void accept(IVisiteur v) {
+    public void accept(ElementVisiteur v) {
         v.visit(this);
     }
-*/
+
     @Override
     public String toString() {
         return "Operateur "+symbole+" [" + arguments + "]";
