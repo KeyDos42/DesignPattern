@@ -1,5 +1,4 @@
 package composite.operator;
-
 import composite.Operator;
 
 public class Division extends Operator {
@@ -13,12 +12,10 @@ public class Division extends Operator {
     }
 
     public double compute() {
-        double res = 0;
         if (y == 0) {
-            System.out.println("Error division par 0");
+            throw new IllegalArgumentException("Divide by zero error");
         } else {
-            res = x / y;
+            return x / y;
         }
-        return res;
     }
 }
