@@ -1,5 +1,10 @@
 package composite;
 
+import composite.operator.Addition;
+import composite.operator.Division;
+import composite.operator.Multiplication;
+import composite.operator.Soustraction;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +21,14 @@ public abstract class Operator extends Terme {
                 res += ((Multiplication) terme).compute();
             } else if (terme instanceof Division) {
                 res += ((Division) terme).compute();
-            } else if (terme instanceof  Soustraction) {
+            } else if (terme instanceof Soustraction) {
                 res += ((Soustraction) terme).compute();
             }
         }
         return res;
     }
 
-    void add(Terme arithmetic) {
+    protected void add(Terme arithmetic) {
         operatorList.add(arithmetic);
     }
 }

@@ -1,4 +1,6 @@
-package composite;
+package composite.operator;
+
+import composite.Operator;
 
 public class Division extends Operator {
     private int x;
@@ -12,7 +14,9 @@ public class Division extends Operator {
 
     public double compute() {
         double res = 0;
-        if (y != 0) {
+        if (y == 0) {
+            System.out.println("Error division par 0");
+        } else {
             res = x / y;
         }
         return res;

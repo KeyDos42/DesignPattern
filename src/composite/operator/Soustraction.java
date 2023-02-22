@@ -1,4 +1,6 @@
-package composite;
+package composite.operator;
+
+import composite.Operator;
 
 public class Soustraction extends Operator {
     private int x;

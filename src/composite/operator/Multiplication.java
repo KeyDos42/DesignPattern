@@ -1,4 +1,6 @@
-package composite;
+package composite.operator;
+
+import composite.Operator;
 
 public class Multiplication extends Operator {
     private int x;
