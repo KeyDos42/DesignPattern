@@ -1,18 +1,28 @@
 package composite.operator;
 
+import composite.Expression;
+import composite.Number;
 import composite.Operator;
 
-public class Addition extends Operator {
-    private int x;
-    private int y;
+import java.util.Iterator;
 
-    public Addition(int x, int y) {
-        super.add(Addition.this);
-        this.x = x;
-        this.y = y;
+public class Addition extends Operator {
+    public Addition() {
+        super('+');
     }
 
-    public double compute() {
-        return x + y;
+    public int interpret() {
+        int res = 0;
+        if (this.arguments.size() == 2){
+            Iterator<Expression> numberIterator = arguments.iterator();
+
+            while (numberIterator.hasNext()) {
+                res += numberIterator.next().interpret();
+            }
+        } else {
+            throw new IllegalArgumentException("Not arguments size !");
+        }
+
+        return res;
     }
 }

@@ -1,8 +1,20 @@
 package composite;
 
-    public class Number extends Term {
+public class Number extends Expression {
+    private int valeur;
+
+    public Number(int valeur) {
+        this.valeur = valeur;
+    }
+
+    public int interpret() {
+        return valeur;
+    }
+
     @Override
-    double computeOperator() {
-        return 0;
+    public String toString() {
+        return "Entier [" +
+                "valeur=" + valeur +
+                "]";
     }
 }

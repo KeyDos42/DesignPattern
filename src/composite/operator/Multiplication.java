@@ -1,18 +1,25 @@
 package composite.operator;
 
+import composite.Expression;
 import composite.Operator;
 
-public class Multiplication extends Operator {
-    private int x;
-    private int y;
+import java.util.Iterator;
 
-    public Multiplication(int x, int y) {
-        super.add(Multiplication.this);
-        this.x = x;
-        this.y = y;
+public class Multiplication extends Operator {
+    public Multiplication() {
+        super('*');
     }
 
-    public double compute() {
-        return x * y;
+    public int interpret() {
+        int res = 1;
+        if (this.arguments.size() == 2){
+            for (Expression argument : arguments) {
+                res *= argument.interpret();
+            }
+        } else {
+            throw new IllegalArgumentException("Not arguments size !");
+        }
+
+        return res;
     }
 }

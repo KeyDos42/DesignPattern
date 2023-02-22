@@ -1,34 +1,56 @@
 package composite;
 
-import composite.operator.Addition;
-import composite.operator.Division;
-import composite.operator.Multiplication;
-import composite.operator.Subtraction;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Operator extends Term {
-    List<Term> operatorList = new ArrayList<>();
+public abstract class Operator extends Expression implements IOperator {
 
-    @Override
-    double computeOperator() {
-        double res = 0;
-        for (Term term : operatorList) {
-            if (term instanceof Addition) {
-                res += ((Addition) term).compute();
-            } else if (term instanceof Multiplication) {
-                res += ((Multiplication) term).compute();
-            } else if (term instanceof Division) {
-                res += ((Division) term).compute();
-            } else if (term instanceof Subtraction) {
-                res += ((Subtraction) term).compute();
-            }
-        }
-        return res;
+    // façade : attribut liste en privé
+    protected List<Expression> arguments = new ArrayList<>();
+    private final char symbole;
+
+    public Operator(char symbole) {
+        super();
+        this.symbole=symbole;
     }
 
-    protected void add(Term arithmetic) {
-        operatorList.add(arithmetic);
+    public char getSymbole() {
+        return this.symbole;
+    }
+
+    /**
+     * Façade : on redéfinit les méthodes définie sur List
+     * Ici, la méthode add n'a rien à voir avec l'addition.
+     * add permet d'ajouter un élément à une liste.
+     * Donc ici d'ajouter un argument à notre opérateur
+     */
+    @Override
+    public boolean add(Expression e) {
+        return this.arguments.add(e);
+    }
+
+    @Override
+    public Expression remove(int i) {
+        return this.arguments.remove(i);
+    }
+
+    @Override
+    public int size() {
+        return this.arguments.size();
+    }
+
+    @Override
+    public Expression get(int i) {
+        return this.arguments.get(i);
+    }
+/*
+    @Override
+    public void accept(IVisiteur v) {
+        v.visit(this);
+    }
+*/
+    @Override
+    public String toString() {
+        return "Operateur "+symbole+" [" + arguments + "]";
     }
 }
