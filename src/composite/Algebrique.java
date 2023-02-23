@@ -23,25 +23,20 @@ public class Algebrique {
 
     private void genererExpression() {
         Contexte contexte = new Contexte(Lettre.x, 8);
-
-        Expression i1 = new Nombre(contexte.getValue(Lettre.x));
-        Expression i6 = new Nombre(contexte.getValue(Lettre.y));
-        Operateur p0 = new Addition();
-        p0.add(i1);
-        p0.add(i6);
-        System.out.println(p0.interpret(contexte));
-
-        Expression i5 = new Nombre(contexte.getValue(Lettre.z));
-        Operateur p1 = new Multiplication();
-        p1.add(i5);
-        p1.add(i6);
-        System.out.println(p1.interpret(contexte));
-
-        Contexte contexte1 = new Contexte(Lettre.x, 5);
+        contexte.put(Lettre.y, 9);
+        contexte.put(Lettre.z, 2);
 
         Operateur s1 = new Soustraction();
-        s1.add(p1); s1.add(p0);
+        Expression p0 = new Nombre(contexte.get(Lettre.x));
+        Expression p1 = new Nombre(contexte.get(Lettre.y));
+        Expression p2 = new Nombre(contexte.get(Lettre.z));
+        s1.add(p0);
+        s1.add(p1);
+        s1.add(p2);
+
+
         this.expression =s1;
+        System.out.println(expression);
         /*
         Operateur p2 = new Soustraction();
         p2.add(i5);
@@ -52,10 +47,6 @@ public class Algebrique {
         d2.add(i5);
         d2.add(i6);
         */
-    }
-
-    private void genererExpressionAlea() {
-
     }
 
     public Expression getExpression() {

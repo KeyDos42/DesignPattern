@@ -11,8 +11,8 @@ public class Contexte {
         this.put(x, i);
     }
 
-    public int put(Lettre lettre, int i) {
-        return map.put(lettre, i);
+    public void put(Lettre lettre, int i) {
+        map.put(lettre, i);
     }
 
     public boolean containsKey(Lettre lettre) {

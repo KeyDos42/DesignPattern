@@ -1,13 +1,14 @@
 package composite;
 
-import composite.visitor.VisiteurExpr;
+import composite.visitor.VisiteurInfixe;
 
 public class Main {
     public static void main(String[] args) {
         Algebrique.getInstance();
 
 
-
-        //(new VisiteurExpr()).visit();
+        (new VisiteurInfixe()).visit();
+        // (new VisiteurExpr()).visit();
+        // (new VisiteurExprPrefixe()).visit();
     }
 }

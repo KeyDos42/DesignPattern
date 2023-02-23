@@ -15,11 +15,11 @@ public class VisiteurExprPrefixe extends Visiteur {
 
     @Override
     public void visit(Operateur operateur) {
-        System.out.println(operateur.getSymbole() + "(");
+        System.out.print(operateur.getSymbole() + "(");
         for (int i = 0; i < operateur.size()-1; i++) {
             Expression exp = operateur.get(i);
             exp.accept(this);
-            System.out.println(",");
+            System.out.print(",");
         }
         // On visite le dernier
 
