@@ -1,6 +1,6 @@
 package composite;
 
-import composite.visitor.ElementVisiteur;
+import composite.visitor.IVisiteur;
 
 public class Nombre extends Expression {
     private int valeur;
@@ -14,8 +14,8 @@ public class Nombre extends Expression {
     }
 
     @Override
-    public void accept(ElementVisiteur elementVisiteur) {
-
+    public void accept(IVisiteur visiteur) {
+        visiteur.visit(this);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package composite;
 
 public interface IOperateur {
-    public boolean add(Expression e);
-    public Expression remove(int i);
-    public int size();
-    public Expression get(int i);
+    boolean add(Expression e);
+    Expression remove(int i);
+    int size();
+    Expression get(int i);
 }

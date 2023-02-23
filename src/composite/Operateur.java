@@ -1,6 +1,6 @@
 package composite;
 
-import composite.visitor.ElementVisiteur;
+import composite.visitor.IVisiteur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +47,8 @@ public abstract class Operateur extends Expression implements IOperateur {
     }
 
     @Override
-    public void accept(ElementVisiteur v) {
-        v.visit(this);
+    public void accept(IVisiteur visiteur) {
+        visiteur.visit(this);
     }
 
     @Override

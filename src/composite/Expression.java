@@ -1,9 +1,8 @@
 package composite;
 
-import composite.visitor.ElementVisiteur;
-import composite.visitor.Visiteur;
+import composite.visitor.IVisiteur;
 
 public abstract class Expression {
     abstract public int interpret();
-    abstract public void accept(ElementVisiteur elementVisiteur);
+    abstract public void accept(IVisiteur iVisiteur);
 }

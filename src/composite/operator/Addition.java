@@ -2,7 +2,6 @@ package composite.operator;
 
 import composite.Expression;
 import composite.Operateur;
-import composite.visitor.ElementVisiteur;
 
 import java.util.Iterator;
 
@@ -15,7 +14,6 @@ public class Addition extends Operateur {
         int res = 0;
         if (this.arguments.size() == 2){
             Iterator<Expression> numberIterator = arguments.iterator();
-
             while (numberIterator.hasNext()) {
                 res += numberIterator.next().interpret();
             }
@@ -24,10 +22,5 @@ public class Addition extends Operateur {
         }
 
         return res;
-    }
-
-    @Override
-    public void accept(ElementVisiteur elementVisiteur) {
-
     }
 }

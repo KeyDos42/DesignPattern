@@ -18,6 +18,7 @@ public class Algebrique {
 
     private Algebrique() {
         genererExpression();
+        generExp();
     }
 
     private void genererExpression() {
@@ -43,5 +44,15 @@ public class Algebrique {
         d2.add(i5);
         d2.add(i6);
         System.out.println(d2.interpret());
+
+
+    }
+
+    private void generExp() {
+
+    }
+
+    public Expression getExpression() {
+        return expression;
     }
 }

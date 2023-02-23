@@ -13,7 +13,11 @@ public class Division extends Operateur {
             res = this.arguments.get(0).interpret();
             arguments.remove(arguments.get(0));
             for (Expression argument : arguments) {
-                res /= argument.interpret();
+                if (argument.interpret() == 0) {
+                    throw new IllegalArgumentException("Division par 0");
+                } else {
+                    res /= argument.interpret();
+                }
             }
         } else {
             throw new IllegalArgumentException("Not arguments size !");
