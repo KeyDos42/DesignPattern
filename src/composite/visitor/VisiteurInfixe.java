@@ -40,6 +40,8 @@ public class VisiteurInfixe extends Visiteur {
             }
             operateur.get(operateur.size()-1).accept(this);
             System.out.print(")");
+        } else {
+            throw new IllegalArgumentException("Plus de deux arguments !");
         }
     }
 
