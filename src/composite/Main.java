@@ -1,5 +1,7 @@
 package composite;
 
+import composite.visitor.VisiteurExpr;
+import composite.visitor.VisiteurExprPrefixe;
 import composite.visitor.VisiteurInfixe;
 
 public class Main {
@@ -8,7 +10,9 @@ public class Main {
 
 
         (new VisiteurInfixe()).visit();
-        // (new VisiteurExpr()).visit();
-        // (new VisiteurExprPrefixe()).visit();
+        System.out.println();
+        (new VisiteurExpr()).visit();
+        System.out.println();
+        (new VisiteurExprPrefixe()).visit();
     }
 }

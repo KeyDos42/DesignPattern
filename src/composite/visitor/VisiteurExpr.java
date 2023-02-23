@@ -1,24 +1,30 @@
 package composite.visitor;
 
-import composite.Algebrique;
-import composite.Nombre;
-import composite.Operateur;
-import composite.Variable;
+import composite.*;
 
 public class VisiteurExpr extends Visiteur {
     @Override
     public void visit(Nombre nombre) {
-        System.out.println(nombre.getValeur());
+        System.out.print(nombre.getValeur());
     }
 
     @Override
     public void visit(Variable variable) {
-        System.out.println(variable.getLettre());
+        System.out.print(variable.getLettre());
     }
 
+    //TODO Refaire l'operateur VisiteurExpr
     @Override
     public void visit(Operateur operateur) {
-        System.out.println(operateur.getSymbole() + operateur.toString());
+        System.out.print("(");
+        for (int i = operateur.size()-1; i > 0; i--) {
+            Expression exp = operateur.get(i);
+            exp.accept(this);
+            System.out.print(",");
+        }
+
+        operateur.get(operateur.size()-1).accept(this);
+        System.out.print(")" + operateur.getSymbole());
     }
 
     @Override

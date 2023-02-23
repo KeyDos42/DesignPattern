@@ -5,12 +5,12 @@ import composite.*;
 public class VisiteurExprPrefixe extends Visiteur {
     @Override
     public void visit(Nombre nombre) {
-        System.out.println(nombre.getValeur());
+        System.out.print(nombre.getValeur());
     }
 
     @Override
     public void visit(Variable variable) {
-        System.out.println(variable.getLettre());
+        System.out.print(variable.getLettre());
     }
 
     @Override
@@ -21,8 +21,9 @@ public class VisiteurExprPrefixe extends Visiteur {
             exp.accept(this);
             System.out.print(",");
         }
-        // On visite le dernier
 
+        operateur.get(operateur.size()-1).accept(this);
+        System.out.print(")");
     }
 
     @Override
