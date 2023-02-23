@@ -9,7 +9,7 @@ public class Nombre extends Expression {
         this.valeur = valeur;
     }
 
-    public int interpret() {
+    public int interpret(Contexte contexte) {
         return valeur;
     }
 

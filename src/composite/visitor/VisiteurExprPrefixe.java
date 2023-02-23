@@ -3,6 +3,7 @@ package composite.visitor;
 import composite.Algebrique;
 import composite.Nombre;
 import composite.Operateur;
+import composite.Variable;
 
 public class VisiteurExprPrefixe implements IVisiteur {
     @Override
@@ -13,6 +14,11 @@ public class VisiteurExprPrefixe implements IVisiteur {
     @Override
     public void visit(Operateur operateur) {
         System.out.println(operateur.getSymbole() + operateur.toString());
+    }
+
+    @Override
+    public void visit(Variable variable) {
+        variable.interpret();
     }
 
     @Override

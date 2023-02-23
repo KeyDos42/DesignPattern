@@ -3,6 +3,7 @@ package composite.visitor;
 import composite.Algebrique;
 import composite.Nombre;
 import composite.Operateur;
+import composite.Variable;
 
 public class Infixe implements IVisiteur {
     @Override
@@ -12,7 +13,28 @@ public class Infixe implements IVisiteur {
 
     @Override
     public void visit(Operateur operateur) {
-        System.out.println(operateur.getSymbole() + operateur.toString());
+        switch (operateur.getSymbole()) {
+            case '+' :
+                System.out.println("Opérateur +");
+                break;
+            case '-' :
+                System.out.println("Opérateur -");
+                break;
+            case '/' :
+                System.out.println("Opérateur /");
+                break;
+            case '*' :
+                System.out.println("Opérateur *");
+                break;
+            default:
+                System.out.println(" ");
+                break;
+        }
+    }
+
+    @Override
+    public void visit(Variable variable) {
+        variable.interpret();
     }
 
     @Override
