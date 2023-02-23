@@ -9,13 +9,27 @@ public class Variable extends Expression {
         this.lettre = lettre;
     }
 
-    @Override
-    public int interpret(Contexte contexte) {
-        return contexte.getValue(lettre);
+    public Lettre getLettre() {
+        return lettre;
     }
 
     @Override
-    public void accept(IVisiteur iVisiteur) {
-        iVisiteur.visit(this);
+    public int interpret(Contexte contexte) {
+        if (contexte != null && contexte.containsKey(this.lettre)) {
+            return contexte.get(this.lettre);
+        } else {
+            throw new IllegalArgumentException("variable inconnue dans le contexte !");
+        }
+    }
+
+    @Override
+    public void accept(IVisiteur visiteur) {
+        visiteur.visit(this);
+    }
+
+    @Override
+    public String toString() {
+        return "lettre=" + lettre +
+                '}';
     }
 }

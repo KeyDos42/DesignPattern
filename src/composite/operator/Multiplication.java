@@ -1,5 +1,6 @@
 package composite.operator;
 
+import composite.Contexte;
 import composite.Expression;
 import composite.Operateur;
 
@@ -8,11 +9,11 @@ public class Multiplication extends Operateur {
         super('*');
     }
 
-    public int interpret() {
+    public int interpret(Contexte contexte) {
         int res = 1;
-        if (this.arguments.size() == 2){
+        if (this.arguments.size() >= 2){
             for (Expression argument : arguments) {
-                res *= argument.interpret();
+                res *= argument.interpret(contexte);
             }
         } else {
             throw new IllegalArgumentException("Not arguments size !");

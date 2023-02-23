@@ -18,11 +18,11 @@ public class Algebrique {
 
     private Algebrique() {
         genererExpression();
-        generExp();
+        //genererExpressionAlea();
     }
 
     private void genererExpression() {
-        Contexte contexte = new Contexte();
+        Contexte contexte = new Contexte(Lettre.x, 8);
 
         Expression i1 = new Nombre(contexte.getValue(Lettre.x));
         Expression i6 = new Nombre(contexte.getValue(Lettre.y));
@@ -37,6 +37,12 @@ public class Algebrique {
         p1.add(i6);
         System.out.println(p1.interpret(contexte));
 
+        Contexte contexte1 = new Contexte(Lettre.x, 5);
+
+        Operateur s1 = new Soustraction();
+        s1.add(p1); s1.add(p0);
+        this.expression =s1;
+        /*
         Operateur p2 = new Soustraction();
         p2.add(i5);
         p2.add(i6);
@@ -45,9 +51,10 @@ public class Algebrique {
         Operateur d2 = new Division();
         d2.add(i5);
         d2.add(i6);
+        */
     }
 
-    private void generExp() {
+    private void genererExpressionAlea() {
 
     }
 
