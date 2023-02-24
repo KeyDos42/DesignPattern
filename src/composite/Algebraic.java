@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Algebraic {
     private static Algebraic instance = null;
-    private List<Expression> expression;
+    private final List<Expression> expression;
 
     public static Algebraic getInstance() {
         if (instance == null) {
