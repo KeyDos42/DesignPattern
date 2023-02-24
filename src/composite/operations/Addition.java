@@ -1,22 +1,22 @@
-package composite.operator;
+package composite.operations;
 
-import composite.Contexte;
-import composite.Expression;
-import composite.Operateur;
+import composite.interpret.Context;
+import composite.interpret.Expression;
+import composite.operator.Operator;
 
 import java.util.Iterator;
 
-public class Addition extends Operateur {
+public class Addition extends Operator {
     public Addition() {
         super('+');
     }
 
-    public int interpret(Contexte contexte) {
+    public int interpret(Context context) {
         int res = 0;
         if (this.arguments.size() >= 2){
             Iterator<Expression> numberIterator = arguments.iterator();
             while (numberIterator.hasNext()) {
-                res += numberIterator.next().interpret(contexte);
+                res += numberIterator.next().interpret(context);
             }
         } else {
             throw new IllegalArgumentException("Not arguments size !");

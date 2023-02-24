@@ -1,35 +1,38 @@
 package composite;
 
-import composite.visitor.IVisiteur;
+import composite.interpret.Context;
+import composite.interpret.Expression;
+import composite.interpret.Letter;
+import composite.visitor.IVisitor;
 
 public class Variable extends Expression {
-    Lettre lettre;
+    Letter letter;
 
-    public Variable(Lettre lettre) {
-        this.lettre = lettre;
+    public Variable(Letter letter) {
+        this.letter = letter;
     }
 
-    public Lettre getLettre() {
-        return lettre;
+    public Letter getLetter() {
+        return letter;
     }
 
     @Override
-    public int interpret(Contexte contexte) {
-        if (contexte != null && contexte.containsKey(this.lettre)) {
-            return contexte.get(this.lettre);
+    public int interpret(Context context) {
+        if (context != null && context.containsKey(this.letter)) {
+            return context.get(this.letter);
         } else {
             throw new IllegalArgumentException("variable inconnue dans le contexte !");
         }
     }
 
     @Override
-    public void accept(IVisiteur visiteur) {
+    public void accept(IVisitor visiteur) {
         visiteur.visit(this);
     }
 
     @Override
     public String toString() {
-        return "lettre=" + lettre +
+        return "lettre=" + letter +
                 '}';
     }
 }

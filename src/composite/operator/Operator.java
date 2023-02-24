@@ -1,20 +1,21 @@
-package composite;
+package composite.operator;
 
-import composite.visitor.IVisiteur;
+import composite.interpret.Expression;
+import composite.visitor.IVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Operateur extends Expression implements IOperateur {
+public abstract class Operator extends Expression implements IOperator {
     protected List<Expression> arguments = new ArrayList<>();
     private final char symbole;
 
-    public Operateur(char symbole) {
+    public Operator(char symbole) {
         super();
         this.symbole=symbole;
     }
 
-    public char getSymbole() {
+    public char getSymbol() {
         return this.symbole;
     }
 
@@ -39,7 +40,7 @@ public abstract class Operateur extends Expression implements IOperateur {
     }
 
     @Override
-    public void accept(IVisiteur visiteur) {
+    public void accept(IVisitor visiteur) {
         visiteur.visit(this);
     }
 

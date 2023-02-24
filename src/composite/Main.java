@@ -1,18 +1,23 @@
 package composite;
 
-import composite.visitor.VisiteurExpr;
-import composite.visitor.VisiteurExprPrefixe;
-import composite.visitor.VisiteurInfixe;
+import composite.visitor.VisitorExpr;
+import composite.visitor.VisitorExprPrefix;
+import composite.visitor.VisitorInfix;
 
 public class Main {
     public static void main(String[] args) {
-        Algebrique.getInstance();
+        // Initialisation and definition
+        Algebraic.getInstance();
 
+        System.out.print("Infix expression : ");
+        (VisitorInfix.getInstance()).visit();
 
-        (new VisiteurInfixe()).visit();
         System.out.println();
-        (new VisiteurExpr()).visit();
+        System.out.print("Expression : ");
+        (VisitorExpr.getInstance()).visit();
+
         System.out.println();
-        (new VisiteurExprPrefixe()).visit();
+        System.out.print("Prefix expression : ");
+        (VisitorExprPrefix.getInstance()).visit();
     }
 }

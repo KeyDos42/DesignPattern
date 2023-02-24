@@ -1,25 +1,27 @@
 package composite;
 
-import composite.visitor.IVisiteur;
+import composite.interpret.Context;
+import composite.interpret.Expression;
+import composite.visitor.IVisitor;
 
-public class Nombre extends Expression {
+public class Number extends Expression {
     private int valeur;
 
-    public Nombre(int valeur) {
+    public Number(int valeur) {
         super();
         this.valeur = valeur;
     }
 
-    public int interpret(Contexte contexte) {
+    public int interpret(Context context) {
         return this.valeur;
     }
 
-    public int getValeur() {
+    public int getValue() {
         return valeur;
     }
 
     @Override
-    public void accept(IVisiteur visiteur) {
+    public void accept(IVisitor visiteur) {
         visiteur.visit(this);
     }
 

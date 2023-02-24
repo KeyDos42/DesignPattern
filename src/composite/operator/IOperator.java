@@ -1,6 +1,8 @@
-package composite;
+package composite.operator;
 
-public interface IOperateur {
+import composite.interpret.Expression;
+
+public interface IOperator {
     boolean add(Expression e);
     Expression remove(int i);
     int size();
