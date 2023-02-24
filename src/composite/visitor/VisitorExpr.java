@@ -45,6 +45,8 @@ public class VisitorExpr extends Visitor {
 
     @Override
     public void visit() {
-        Algebraic.getInstance().getExpression().accept(this);
+        for (Expression expression : Algebraic.getInstance().getExpression()) {
+            expression.accept(this);
+        }
     }
 }

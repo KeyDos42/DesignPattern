@@ -8,15 +8,15 @@ import java.util.List;
 
 public abstract class Operator extends Expression implements IOperator {
     protected List<Expression> arguments = new ArrayList<>();
-    private final char symbole;
+    private final char symbol;
 
-    public Operator(char symbole) {
+    public Operator(char symbol) {
         super();
-        this.symbole=symbole;
+        this.symbol = symbol;
     }
 
     public char getSymbol() {
-        return this.symbole;
+        return this.symbol;
     }
 
     @Override
@@ -40,12 +40,12 @@ public abstract class Operator extends Expression implements IOperator {
     }
 
     @Override
-    public void accept(IVisitor visiteur) {
-        visiteur.visit(this);
+    public void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
     public String toString() {
-        return "Operateur "+symbole+" [" + arguments + "]";
+        return "Operateur "+ symbol +" [" + arguments + "]";
     }
 }
