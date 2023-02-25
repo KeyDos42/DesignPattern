@@ -1,6 +1,6 @@
 package composite.operator;
 
-import composite.interpret.Expression;
+import composite.Expression;
 
 public interface IOperator {
     boolean add(Expression e);

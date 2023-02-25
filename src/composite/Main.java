@@ -1,8 +1,8 @@
 package composite;
 
-import composite.visitor.VisitorExpr;
-import composite.visitor.VisitorExprPrefix;
-import composite.visitor.VisitorInfix;
+import composite.visitor.VisitorPostfixExpr;
+import composite.visitor.VisitorPrefixExpr;
+import composite.visitor.VisitorInfixExpr;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,14 +10,14 @@ public class Main {
         Algebraic.getInstance();
 
         System.out.print("Infix expression : ");
-        (VisitorInfix.getInstance()).visit();
+        (VisitorInfixExpr.getInstance()).visit();
 
         System.out.println();
         System.out.print("Expression : ");
-        (VisitorExpr.getInstance()).visit();
+        (VisitorPostfixExpr.getInstance()).visit();
 
         System.out.println();
         System.out.print("Prefix expression : ");
-        (VisitorExprPrefix.getInstance()).visit();
+        (VisitorPrefixExpr.getInstance()).visit();
     }
 }

@@ -1,21 +1,21 @@
 package composite.visitor;
 
 import composite.*;
-import composite.interpret.Expression;
 import composite.Number;
+import composite.interpret.Variable;
 import composite.operator.Operator;
 
-public class VisitorExpr extends Visitor {
-    private static VisitorExpr instance = null;
+public class VisitorPostfixExpr implements IVisitor {
+    private static VisitorPostfixExpr instance = null;
 
-    public static VisitorExpr getInstance() {
+    public static VisitorPostfixExpr getInstance() {
         if (instance == null) {
-            instance = new VisitorExpr();
+            instance = new VisitorPostfixExpr();
         }
         return instance;
     }
 
-    public VisitorExpr() {
+    public VisitorPostfixExpr() {
         super();
     }
 
@@ -33,20 +33,12 @@ public class VisitorExpr extends Visitor {
     @Override
     public void visit(Operator operator) {
         System.out.print("(");
-        for (int i = operator.size()-1; i > 0; i--) {
-            Expression exp = operator.get(i);
-            exp.accept(this);
-            System.out.print(",");
-        }
-
-        operator.get(operator.size()-1).accept(this);
+        Utils.getVisitorExpression(this, operator);
         System.out.print(")" + operator.getSymbol());
     }
 
     @Override
     public void visit() {
-        for (Expression expression : Algebraic.getInstance().getExpression()) {
-            expression.accept(this);
-        }
+        Algebraic.getInstance().getExpression().accept(this);
     }
 }

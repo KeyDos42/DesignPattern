@@ -2,7 +2,7 @@ package composite.visitor;
 
 import composite.Number;
 import composite.operator.Operator;
-import composite.Variable;
+import composite.interpret.Variable;
 
 public interface IVisitor {
     void visit(Number number);

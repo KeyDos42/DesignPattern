@@ -1,23 +1,22 @@
 package composite.visitor;
 
 import composite.*;
-import composite.interpret.Expression;
+import composite.Expression;
 import composite.Number;
+import composite.interpret.Variable;
 import composite.operator.Operator;
 
-import java.util.Iterator;
+public class VisitorInfixExpr implements IVisitor {
+    private static VisitorInfixExpr instance = null;
 
-public class VisitorInfix extends Visitor {
-    private static VisitorInfix instance = null;
-
-    public static VisitorInfix getInstance() {
+    public static VisitorInfixExpr getInstance() {
         if (instance == null) {
-            instance = new VisitorInfix();
+            instance = new VisitorInfixExpr();
         }
         return instance;
     }
 
-    public VisitorInfix() {
+    public VisitorInfixExpr() {
         super();
     }
 
@@ -50,8 +49,6 @@ public class VisitorInfix extends Visitor {
 
     @Override
     public void visit() {
-        for (Expression expression : Algebraic.getInstance().getExpression()) {
-            expression.accept(this);
-        }
+        Algebraic.getInstance().getExpression().accept(this);
     }
 }

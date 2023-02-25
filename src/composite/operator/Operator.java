@@ -1,6 +1,6 @@
 package composite.operator;
 
-import composite.interpret.Expression;
+import composite.Expression;
 import composite.visitor.IVisitor;
 
 import java.util.ArrayList;

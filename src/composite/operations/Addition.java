@@ -1,7 +1,7 @@
 package composite.operations;
 
 import composite.interpret.Context;
-import composite.interpret.Expression;
+import composite.Expression;
 import composite.operator.Operator;
 
 import java.util.Iterator;

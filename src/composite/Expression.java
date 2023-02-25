@@ -1,5 +1,6 @@
-package composite.interpret;
+package composite;
 
+import composite.interpret.Context;
 import composite.visitor.IVisitor;
 
 public abstract class Expression {

@@ -1,18 +1,13 @@
 package composite;
 
 import composite.interpret.Context;
-import composite.interpret.Expression;
 import composite.interpret.Letter;
-import composite.operations.Multiplication;
 import composite.operations.Subtraction;
 import composite.operator.Operator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Algebraic {
     private static Algebraic instance = null;
-    private final List<Expression> expression;
+    private Expression expression;
 
     public static Algebraic getInstance() {
         if (instance == null) {
@@ -22,10 +17,7 @@ public class Algebraic {
     }
 
     private Algebraic() {
-        expression = new ArrayList<>();
-
         generate1();
-        generate2();
     }
 
     private void generate1() {
@@ -41,11 +33,10 @@ public class Algebraic {
         s1.add(p1);
         s1.add(p2);
 
-        this.expression.add(s1);
+        this.expression = s1;
         System.out.println(expression);
 
         /*
-
         Operator s3 = new Subtraction();
         s3.add(p0);
         s3.add(p1);
@@ -63,22 +54,7 @@ public class Algebraic {
          */
     }
 
-    private void generate2() {
-        Context context = new Context(Letter.x, 4);
-        context.put(Letter.y, 3);
-        context.put(Letter.z, 1);
-
-        Operator s2 = new Multiplication();
-
-        s2.add(new Number(context.get(Letter.x)));
-        s2.add(new Number(context.get(Letter.y)));
-        s2.add(new Number(context.get(Letter.z)));
-
-        this.expression.add(s2);
-        System.out.println(expression);
-    }
-
-    public List<Expression> getExpression() {
+    public Expression getExpression() {
         return expression;
     }
 }

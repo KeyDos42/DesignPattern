@@ -1,7 +1,7 @@
 package composite.operations;
 
 import composite.interpret.Context;
-import composite.interpret.Expression;
+import composite.Expression;
 import composite.operator.Operator;
 
 public class Subtraction extends Operator {

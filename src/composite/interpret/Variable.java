@@ -1,8 +1,6 @@
-package composite;
+package composite.interpret;
 
-import composite.interpret.Context;
-import composite.interpret.Expression;
-import composite.interpret.Letter;
+import composite.Expression;
 import composite.visitor.IVisitor;
 
 public class Variable extends Expression {

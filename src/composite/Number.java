@@ -1,7 +1,6 @@
 package composite;
 
 import composite.interpret.Context;
-import composite.interpret.Expression;
 import composite.visitor.IVisitor;
 
 public class Number extends Expression {
