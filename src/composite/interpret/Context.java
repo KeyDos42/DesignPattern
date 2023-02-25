@@ -19,16 +19,11 @@ public class Context {
         return map.containsKey(letter);
     }
 
-    public int getValue(Letter letter) {
+    public int get(Letter letter) {
         Integer value = map.get(letter);
         if (value == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("Get value null !");
         }
         return value;
-    }
-
-    public int get(Letter letter) {
-        // System.out.println("HASHMAP " + map.get(lettre));
-        return map.get(letter);
     }
 }

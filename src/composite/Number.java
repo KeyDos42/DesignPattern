@@ -4,30 +4,30 @@ import composite.interpret.Context;
 import composite.visitor.IVisitor;
 
 public class Number extends Expression {
-    private int valeur;
+    private final int value;
 
-    public Number(int valeur) {
+    public Number(int value) {
         super();
-        this.valeur = valeur;
+        this.value = value;
     }
 
     public int interpret(Context context) {
-        return this.valeur;
+        return this.value;
     }
 
     public int getValue() {
-        return valeur;
+        return value;
     }
 
     @Override
-    public void accept(IVisitor visiteur) {
-        visiteur.visit(this);
+    public void accept(IVisitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
     public String toString() {
         return "Entier [" +
-                "valeur=" + valeur +
+                "valeur=" + value +
                 "]";
     }
 }

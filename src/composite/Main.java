@@ -13,7 +13,7 @@ public class Main {
         (VisitorInfixExpr.getInstance()).visit();
 
         System.out.println();
-        System.out.print("Expression : ");
+        System.out.print("Postfix expression : ");
         (VisitorPostfixExpr.getInstance()).visit();
 
         System.out.println();

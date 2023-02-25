@@ -32,7 +32,6 @@ public class VisitorInfixExpr implements IVisitor {
 
     @Override
     public void visit(Operator operator) {
-        if (operator.size() > 2) {
             System.out.print("(");
 
             for (int i = 0; i < operator.size() - 1; i++) {
@@ -41,10 +40,7 @@ public class VisitorInfixExpr implements IVisitor {
                 System.out.print(operator.getSymbol() + "");
             }
             operator.get(operator.size() - 1).accept(this);
-            System.out.print(")");
-        } else {
-            throw new IllegalArgumentException("Plus de deux arguments !");
-        }
+        System.out.print(")");
     }
 
     @Override
