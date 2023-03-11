@@ -46,6 +46,6 @@ public abstract class Operator extends Expression implements IOperator {
 
     @Override
     public String toString() {
-        return "Operateur "+ symbol +" [" + arguments + "]";
+        return "Operator "+ symbol +" [" + arguments + "]";
     }
 }

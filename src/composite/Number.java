@@ -26,8 +26,8 @@ public class Number extends Expression {
 
     @Override
     public String toString() {
-        return "Entier [" +
-                "valeur=" + value +
+        return "Integer [" +
+                "value=" + value +
                 "]";
     }
 }
