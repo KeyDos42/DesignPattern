@@ -6,7 +6,6 @@ import composite.visitor.VisitorInfixExpr;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialisation and definition
         Algebraic.getInstance();
 
         System.out.print("Infix expression : ");
