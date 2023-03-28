@@ -7,10 +7,13 @@ import composite.operator.Operator;
 
 public class VisitorPostfixExpr implements IVisitor {
     private static VisitorPostfixExpr instance = null;
+    private final static Object LOCK = new Object();
 
     public static VisitorPostfixExpr getInstance() {
-        if (instance == null) {
-            instance = new VisitorPostfixExpr();
+        synchronized (LOCK) {
+            if (instance == null) {
+                instance = new VisitorPostfixExpr();
+            }
         }
         return instance;
     }

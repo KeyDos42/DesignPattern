@@ -8,10 +8,13 @@ import composite.operator.Operator;
 
 public class VisitorInfixExpr implements IVisitor {
     private static VisitorInfixExpr instance = null;
+    private final static Object LOCK = new Object();
 
     public static VisitorInfixExpr getInstance() {
-        if (instance == null) {
-            instance = new VisitorInfixExpr();
+        synchronized (LOCK) {
+            if (instance == null) {
+                instance = new VisitorInfixExpr();
+            }
         }
         return instance;
     }

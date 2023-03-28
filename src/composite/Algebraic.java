@@ -10,11 +10,14 @@ import composite.operator.Operator;
 
 public class Algebraic {
     private static Algebraic instance = null;
+    private final static Object LOCK = new Object();
     private Expression expression;
 
     public static Algebraic getInstance() {
-        if (instance == null) {
-            instance = new Algebraic();
+        synchronized (LOCK) {
+            if (instance == null) {
+                instance = new Algebraic();
+            }
         }
         return instance;
     }
