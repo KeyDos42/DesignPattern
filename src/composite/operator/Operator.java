@@ -41,7 +41,7 @@ public abstract class Operator extends Expression implements IOperator {
 
     @Override
     public void accept(IVisitor visitor) {
-        visitor.visit(this);
+        visitor.visitAll(this);
     }
 
     @Override
