@@ -25,19 +25,21 @@ public class VisitorInfixExpr implements IVisitor {
 
     @Override
     public void visitAll(Expression expression) {
-        if (expression instanceof Operator) {
-            System.out.print("(");
-            for (int i = 0; i < ((Operator) expression).size() - 1; i++) {
-                Expression expressionOperator = ((Operator) expression).get(i);
-                expressionOperator.accept(this);
-                System.out.print(((Operator) expression).getSymbol());
+        switch (expression.getClass().getSimpleName()) {
+            case "Addition", "Subtraction", "Multiplication", "Division" -> {
+                System.out.print("(");
+                for (int i = 0; i < ((Operator) expression).size() - 1; i++) {
+                    Expression expressionOperator = ((Operator) expression).get(i);
+                    expressionOperator.accept(this);
+                    System.out.print(((Operator) expression).getSymbol());
+                }
+                ((Operator) expression).get(((Operator) expression).size() - 1).accept(this);
+                System.out.print(")");
             }
-            ((Operator) expression).get(((Operator) expression).size() - 1).accept(this);
-            System.out.print(")");
-        } else if (expression instanceof Number) {
-            System.out.print(((Number) expression).getValue());
-        } else if (expression instanceof Variable) {
-            System.out.print(((Variable) expression).getLetter());
+            case "Number" -> System.out.print(((Number) expression).getValue());
+            case "Variable" -> System.out.print(((Variable) expression).getLetter());
+            default -> {
+            }
         }
     }
 
