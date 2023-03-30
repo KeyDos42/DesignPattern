@@ -24,14 +24,16 @@ public class VisitorPostfixExpr implements IVisitor {
 
     @Override
     public void visitAll(Expression expression) {
-        if (expression instanceof Operator) {
-            System.out.print("(");
-            Utils.getVisitorExpression(this, (Operator) expression);
-            System.out.print(")" + ((Operator) expression).getSymbol());
-        } else if (expression instanceof Number) {
-            System.out.print(((Number) expression).getValue());
-        } else if (expression instanceof Variable) {
-            System.out.print(((Variable) expression).getLetter());
+        switch (expression.getClass().getSimpleName()) {
+            case "Addition", "Subtraction", "Multiplication", "Division" -> {
+                System.out.print("(");
+                Utils.getVisitorExpression(this, (Operator) expression);
+                System.out.print(")" + ((Operator) expression).getSymbol());
+            }
+            case "Number" -> System.out.print(((Number) expression).getValue());
+            case "Variable" -> System.out.print(((Variable) expression).getLetter());
+            default -> {
+            }
         }
     }
 
