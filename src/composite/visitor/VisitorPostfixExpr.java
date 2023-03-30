@@ -23,21 +23,16 @@ public class VisitorPostfixExpr implements IVisitor {
     }
 
     @Override
-    public void visit(Number number) {
-        System.out.print(number.getValue());
-    }
-
-    @Override
-    public void visit(Variable variable) {
-        System.out.print(variable.getLetter());
-    }
-
-    //TODO Refaire l'operateur VisiteurExpr
-    @Override
-    public void visit(Operator operator) {
-        System.out.print("(");
-        Utils.getVisitorExpression(this, operator);
-        System.out.print(")" + operator.getSymbol());
+    public void visitAll(Expression expression) {
+        if (expression instanceof Operator) {
+            System.out.print("(");
+            Utils.getVisitorExpression(this, (Operator) expression);
+            System.out.print(")" + ((Operator) expression).getSymbol());
+        } else if (expression instanceof Number) {
+            System.out.print(((Number) expression).getValue());
+        } else if (expression instanceof Variable) {
+            System.out.print(((Variable) expression).getLetter());
+        }
     }
 
     @Override

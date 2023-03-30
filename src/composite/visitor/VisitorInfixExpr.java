@@ -24,26 +24,21 @@ public class VisitorInfixExpr implements IVisitor {
     }
 
     @Override
-    public void visit(Number number) {
-        System.out.print(number.getValue());
-    }
-
-    @Override
-    public void visit(Variable variable) {
-        System.out.print(variable.getLetter());
-    }
-
-    @Override
-    public void visit(Operator operator) {
+    public void visitAll(Expression expression) {
+        if (expression instanceof Operator) {
             System.out.print("(");
-
-            for (int i = 0; i < operator.size() - 1; i++) {
-                Expression expression = operator.get(i);
-                expression.accept(this);
-                System.out.print(operator.getSymbol() + "");
+            for (int i = 0; i < ((Operator) expression).size() - 1; i++) {
+                Expression expressionOperator = ((Operator) expression).get(i);
+                expressionOperator.accept(this);
+                System.out.print(((Operator) expression).getSymbol());
             }
-            operator.get(operator.size() - 1).accept(this);
-        System.out.print(")");
+            ((Operator) expression).get(((Operator) expression).size() - 1).accept(this);
+            System.out.print(")");
+        } else if (expression instanceof Number) {
+            System.out.print(((Number) expression).getValue());
+        } else if (expression instanceof Variable) {
+            System.out.print(((Variable) expression).getLetter());
+        }
     }
 
     @Override

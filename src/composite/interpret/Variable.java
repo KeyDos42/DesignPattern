@@ -25,7 +25,7 @@ public class Variable extends Expression {
 
     @Override
     public void accept(IVisitor visiteur) {
-        visiteur.visit(this);
+        visiteur.visitAll(this);
     }
 
     @Override
