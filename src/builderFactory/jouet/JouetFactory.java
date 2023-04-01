@@ -10,8 +10,8 @@ public abstract class JouetFactory {
 
     public static JouetFactory getFactory(TypeJouet typeJouet) {
         return switch (typeJouet) {
-            case PELUCHE_OUIOUI, PELUCHE_CHAT, PELUCHE_CHIEN, PELUCHE_LION, PELUCHE_OBELIX -> new PelucheFactory();
-            case VOITURE_SPIDERMAN, VOITURE_BATMAN, SCOOTER, CAMION -> new VehiculeFactory();
+            case PELUCHE_OUIOUI, PELUCHE_CHAT, PELUCHE_CHIEN, PELUCHE_LION, PELUCHE_OBELIX -> PelucheFactory.getInstance();
+            case VOITURE_SPIDERMAN, VOITURE_BATMAN, SCOOTER, CAMION -> VehiculeFactory.getInstance();
         };
     }
 }

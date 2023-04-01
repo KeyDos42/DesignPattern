@@ -7,7 +7,6 @@ import builderFactory.vehicule.Vehicule;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.SynchronousQueue;
 
 public class Coffre {
     List<Jouet> jouets = new ArrayList<>();
@@ -32,7 +31,7 @@ public class Coffre {
                 System.out.print(((Vehicule) jouet).getMoteur());
                 System.out.println(" ---- ");
             } else {
-                System.out.println("Pas de roue ni de moteur !");
+                System.out.println("; Pas de roue ni de moteur !");
             }
         }
     }
