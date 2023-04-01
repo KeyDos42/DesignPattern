@@ -7,10 +7,13 @@ import composite.operator.Operator;
 
 public class VisitorPrefixExpr implements IVisitor {
     private static VisitorPrefixExpr instance = null;
+    private final static Object LOCK = new Object();
 
     public static VisitorPrefixExpr getInstance() {
-        if (instance == null) {
-            instance = new VisitorPrefixExpr();
+        synchronized (LOCK) {
+            if (instance == null) {
+                instance = new VisitorPrefixExpr();
+            }
         }
         return instance;
     }
@@ -20,20 +23,18 @@ public class VisitorPrefixExpr implements IVisitor {
     }
 
     @Override
-    public void visit(Number number) {
-        System.out.print(number.getValue());
-    }
-
-    @Override
-    public void visit(Variable variable) {
-        System.out.print(variable.getLetter());
-    }
-
-    @Override
-    public void visit(Operator operator) {
-        System.out.print(operator.getSymbol() + "(");
-        Utils.getVisitorExpression(this, operator);
-        System.out.print(")");
+    public void visitAll(Expression expression) {
+        switch (expression.getClass().getSimpleName()) {
+            case "Addition", "Subtraction", "Multiplication", "Division" -> {
+                System.out.print(((Operator) expression).getSymbol() + "(");
+                Utils.getVisitorExpression(this, (Operator) expression);
+                System.out.print(")");
+            }
+            case "Number" -> System.out.print(((Number) expression).getValue());
+            case "Variable" -> System.out.print(((Variable) expression).getLetter());
+            default -> {
+            }
+        }
     }
 
     @Override
