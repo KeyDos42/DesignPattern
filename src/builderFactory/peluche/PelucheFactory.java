@@ -18,10 +18,10 @@ public class PelucheFactory extends JouetFactory {
     public IJouet creerJouet(TypeJouet typeJouet) {
         return switch (typeJouet) {
             case PELUCHE_OUIOUI -> new PeluchePersonnage("Oui Oui", typeJouet);
-            case PELUCHE_OBELIX -> new PeluchePersonnage("Obelix", typeJouet);
+            case PELUCHE_OBELIX -> new PeluchePersonnage(typeJouet);
             case PELUCHE_CHAT -> new PelucheAnimal("Chat", typeJouet);
             case PELUCHE_CHIEN -> new PelucheAnimal("Chien", typeJouet);
-            case PELUCHE_LION -> new PelucheAnimal("Lion", typeJouet);
+            case PELUCHE_LION -> new PelucheAnimal(typeJouet);
             default -> throw new IllegalArgumentException("Type de jouet inconnu");
         };
     }
