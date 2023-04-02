@@ -8,7 +8,7 @@ public class VoitureBuilder extends VehiculeBuilder {
     public VoitureBuilder(TypeJouet typeJouet) {
         switch (typeJouet) {
             case VOITURE_BATMAN -> vehicule = new Voiture("Batmobile", TypeJouet.VOITURE_BATMAN);
-            case VOITURE_SPIDERMAN -> vehicule = new Voiture("Spidermobile", TypeJouet.VOITURE_SPIDERMAN);
+            case VOITURE_SPIDERMAN -> vehicule = new Voiture(TypeJouet.VOITURE_SPIDERMAN);
         }
         this.type = typeJouet;
     }

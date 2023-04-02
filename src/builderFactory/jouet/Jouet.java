@@ -3,12 +3,17 @@ package builderFactory.jouet;
 import builderFactory.model.TypeJouet;
 
 public abstract class Jouet implements IJouet {
-    private String nom="inconnu";
+    private String nom = "inconnu";
     private final TypeJouet typeJouet;
 
     public Jouet(String nom, TypeJouet typeJouet) {
         super();
         this.nom = nom;
+        this.typeJouet = typeJouet;
+    }
+
+    public Jouet(TypeJouet typeJouet) {
+        super();
         this.typeJouet = typeJouet;
     }
 

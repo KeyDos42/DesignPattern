@@ -12,6 +12,10 @@ public abstract class Vehicule extends Jouet {
         super(nom, typeJouet);
     }
 
+    public Vehicule(TypeJouet typeJouet) {
+        super(typeJouet);
+    }
+
     public void setNbRoues(int nbRoues) {
         this.nbRoues = nbRoues;
     }

@@ -4,7 +4,6 @@ import builderFactory.model.Moteur;
 import builderFactory.model.TypeJouet;
 
 public class CamionBuilder extends VehiculeBuilder {
-
     public CamionBuilder(String nom, TypeJouet typeJouet) {
         super.vehicule = new Camion(nom, typeJouet);
     }
