@@ -37,6 +37,7 @@ public class Coffre {
     }
 
     public static void main(String[] args) {
+        // Finish
         new Coffre();
     }
 }
