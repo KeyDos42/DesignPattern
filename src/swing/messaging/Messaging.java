@@ -26,8 +26,9 @@ public class Messaging extends JFrame implements ActionListener {
 
         ArrayList<String> users = new ArrayList<>();
         users.add("Alice");
-        users.add("Bob");
+        users.add("Cob");
         users.add("Charlie");
+        users.sort(String::compareTo);
 
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.fill = GridBagConstraints.BOTH;
