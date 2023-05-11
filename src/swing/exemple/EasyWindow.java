@@ -1,4 +1,4 @@
-package swing;
+package swing.exemple;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;

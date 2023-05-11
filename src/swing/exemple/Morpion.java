@@ -1,4 +1,4 @@
-package swing;
+package swing.exemple;
 
 import javax.swing.*;
 import java.awt.*;

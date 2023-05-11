@@ -1,10 +1,7 @@
-package swing;
+package swing.exemple;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.io.Serial;
 
 public class ScrollExercice extends JFrame {
@@ -15,7 +12,7 @@ public class ScrollExercice extends JFrame {
     public static final int STATUS = 0;
 
     public ScrollExercice() {
-        super("Scroll");
+        super("Scroll exercice");
 
         final JFrame frame = new JFrame("JScrollbar Demo");
 
