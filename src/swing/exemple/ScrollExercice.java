@@ -7,9 +7,6 @@ import java.io.Serial;
 public class ScrollExercice extends JFrame {
     @Serial
     private static final long serialVersionUID = 1L;
-    private static final int LARGEUR = 500;
-    private static final int HAUTEUR = 700;
-    public static final int STATUS = 0;
 
     public ScrollExercice() {
         super("Scroll exercice");
