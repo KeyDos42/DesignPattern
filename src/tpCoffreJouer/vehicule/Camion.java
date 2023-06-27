@@ -1,6 +1,6 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.model.TypeJouet;
 
 public class Camion extends Vehicule {
     public Camion(String nom, TypeJouet typeJouet) {

@@ -1,8 +1,8 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.jouet.Jouet;
-import builderFactory.model.Moteur;
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.jouet.Jouet;
+import tpCoffreJouer.model.Moteur;
+import tpCoffreJouer.model.TypeJouet;
 
 public abstract class Vehicule extends Jouet {
     private int nbRoues;

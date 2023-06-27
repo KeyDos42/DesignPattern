@@ -1,9 +1,9 @@
-package builderFactory.jouet;
+package tpCoffreJouer.jouet;
 
 
-import builderFactory.model.TypeJouet;
-import builderFactory.peluche.PelucheFactory;
-import builderFactory.vehicule.VehiculeFactory;
+import tpCoffreJouer.model.TypeJouet;
+import tpCoffreJouer.peluche.PelucheFactory;
+import tpCoffreJouer.vehicule.VehiculeFactory;
 
 public abstract class JouetFactory {
     public abstract IJouet creerJouet(TypeJouet typeJouet);

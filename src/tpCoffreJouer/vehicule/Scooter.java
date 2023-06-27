@@ -1,6 +1,6 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.model.TypeJouet;
 
 public class Scooter extends Vehicule {
 

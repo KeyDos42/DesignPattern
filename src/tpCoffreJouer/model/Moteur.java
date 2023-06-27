@@ -1,4 +1,4 @@
-package builderFactory.model;
+package tpCoffreJouer.model;
 
 public enum Moteur {
     DIESEL,

@@ -1,9 +1,9 @@
-package builderFactory.model;
+package tpCoffreJouer.model;
 
-import builderFactory.jouet.IJouet;
-import builderFactory.jouet.Jouet;
-import builderFactory.jouet.JouetFactory;
-import builderFactory.vehicule.Vehicule;
+import tpCoffreJouer.jouet.IJouet;
+import tpCoffreJouer.jouet.Jouet;
+import tpCoffreJouer.jouet.JouetFactory;
+import tpCoffreJouer.vehicule.Vehicule;
 
 import java.util.ArrayList;
 import java.util.List;

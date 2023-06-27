@@ -1,8 +1,8 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.jouet.IJouet;
-import builderFactory.jouet.JouetFactory;
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.jouet.IJouet;
+import tpCoffreJouer.jouet.JouetFactory;
+import tpCoffreJouer.model.TypeJouet;
 
 public class VehiculeFactory extends JouetFactory {
     public static VehiculeFactory instance;

@@ -1,6 +1,6 @@
-package builderFactory.peluche;
+package tpCoffreJouer.peluche;
 
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.model.TypeJouet;
 
 public class PeluchePersonnage extends Peluche {
     public PeluchePersonnage(String nom, TypeJouet typeJouet) {

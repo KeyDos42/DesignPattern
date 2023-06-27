@@ -1,6 +1,6 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.jouet.Jouet;
+import tpCoffreJouer.jouet.Jouet;
 
 public abstract class  VehiculeBuilder {
     protected Vehicule vehicule;

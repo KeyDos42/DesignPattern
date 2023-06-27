@@ -1,6 +1,6 @@
-package builderFactory.jouet;
+package tpCoffreJouer.jouet;
 
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.model.TypeJouet;
 
 public abstract class Jouet implements IJouet {
     private String nom = "inconnu";

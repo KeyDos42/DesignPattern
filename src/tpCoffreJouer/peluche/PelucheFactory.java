@@ -1,8 +1,8 @@
-package builderFactory.peluche;
+package tpCoffreJouer.peluche;
 
-import builderFactory.jouet.IJouet;
-import builderFactory.jouet.JouetFactory;
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.jouet.IJouet;
+import tpCoffreJouer.jouet.JouetFactory;
+import tpCoffreJouer.model.TypeJouet;
 
 public class PelucheFactory extends JouetFactory {
     private static PelucheFactory instance;

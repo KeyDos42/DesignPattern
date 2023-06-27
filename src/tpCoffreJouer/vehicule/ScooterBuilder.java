@@ -1,7 +1,7 @@
-package builderFactory.vehicule;
+package tpCoffreJouer.vehicule;
 
-import builderFactory.model.Moteur;
-import builderFactory.model.TypeJouet;
+import tpCoffreJouer.model.Moteur;
+import tpCoffreJouer.model.TypeJouet;
 
 public class ScooterBuilder extends VehiculeBuilder {
     public ScooterBuilder(String nom, TypeJouet typeJouet) {
